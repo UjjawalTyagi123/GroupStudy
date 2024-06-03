@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import "./details.css";
+import { Button } from "bootstrap";
 import { useQuery } from "react-query";
 
 function Details(props) {
   let id = useParams().id;
 
   const fetchUser = (id) => {
-    return axios.get(`http://localhost:4000/users/${id}`);
+    return axios.get(`http://localhost:3000/users/${id}`);
   };
 
   const { isloading, data } = useQuery(["user", id], () => fetchUser(id));
@@ -69,7 +70,10 @@ function Details(props) {
                 )}
               </p>
             </div>
+
+            <button type="button" class="btn btn-primary" onClick={()=>alert("Request send successfully!")} >Add friend</button>
           </div>
+        
         </div>
       )}
     </>

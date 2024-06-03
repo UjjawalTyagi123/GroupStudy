@@ -1,12 +1,12 @@
 import { useMutation, useQuery,useQueryClient } from "react-query";
 import axios from 'axios'
 
-const fetchUsers=()=>{
-    return axios.get('http://localhost:4000/Users')
+export const fetchUsers=()=>{
+    return axios.get('http://localhost:3000/Users')
 }
 
 const addUsers=(user)=>{
-    return axios.post('http://localhost:4000/Users',user)
+    return axios.post('http://localhost:3000/Users',user)
 }
 export const useUserData=(onSuccess,onError)=>{
     return useQuery('users',fetchUsers,{

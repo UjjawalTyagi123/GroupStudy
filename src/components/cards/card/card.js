@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
+import { Button } from "bootstrap";
 import "./card.css";
 
 function Student(props) {
@@ -16,10 +17,10 @@ function Student(props) {
       style={{
         width: "18rem",
         cursor: "pointer",
-        maxHeight: "16rem",
+        height:"20rem",
         overflow: "hidden",
         scrollbarWidth: "0px",
-        marginTop: "5rem",
+        marginTop: "1rem",
       }}
     >
       <Card.Img
@@ -40,6 +41,7 @@ function Student(props) {
             ? user.about
             : "hey nerds! i'm intense focused,contact me if you wanna make me your academic partner"}
         </Card.Text>
+        <button type="button" class="btn btn-primary" style={{position:'absolute',bottom:'0',marginBottom:'10px'}}>View profile</button>
       </Card.Body>
     </Card>
   );

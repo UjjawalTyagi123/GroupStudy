@@ -11,7 +11,7 @@ function Card(props) {
   };
 
   const { isLoading, data, isFetching } = useUserData(onSuccess, onError);
-
+ 
   let users = data?.data;
   console.log(users);
 
@@ -32,11 +32,11 @@ function Card(props) {
         <Grid
           container
           alignItems="stretch"
-          spacing={10}
-          style={{ marginLeft: "2rem" }}
+          spacing={0}
+          style={{ marginLeft: "5rem"}}
         >
           {users.map((user) => (
-            <Grid key={user.id} item xs={12} sm={6} md={3}>
+            <Grid key={user.id} item xs={10} sm={6} md={3}>
               <Student user={user} props={props.props} />
             </Grid>
           ))}
